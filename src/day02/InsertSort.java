@@ -46,6 +46,24 @@ public class InsertSort {
 		}
 		return data;
 	}
+	
+	/**
+	 * 另一种方式实现插入排序
+	 * 循环不变量[i,n)为已排序，[0,i)未排序
+	 * @param args
+	 */
+	public static<T extends Comparable<T>> T[] sort3(T[] data){
+		for(int i=data.length-1; i>=0; i--){
+			int j;
+			T t = data[i];
+			for(j=i; j+1<data.length && t.compareTo(data[j+1])>0; j++){
+				data[j] = data[j+1];
+			}
+			data[j] = t;
+		}
+		return data;
+	}
+	
 	public static void main(String[] args) {
 		int[] dataSize = {10000,100000};
 //		for(int n : dataSize){
