@@ -19,11 +19,13 @@ public class SortHelping {
 			SelectionSort.selectionSort(data);
 		else if(sortName.equals("InsertSort"))
 			InsertSort.sort(data);
+		else if(sortName.equals("InsertSort2"))
+			InsertSort.sort2(data);
 		long endTime = System.nanoTime();
 		double time = (endTime - startTime)/1000000000.0;
 		if (!isSorted(data))
 			throw new RuntimeException("data sort Exception");
-		System.out.println(String.format("SelectionSort n=%d t=%f", data.length,time));
+		System.out.println(String.format("%s n=%d t=%f",sortName, data.length,time));
 	}
 	/**
 	 * 交换数组中两个位置的元素

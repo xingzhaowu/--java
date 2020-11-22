@@ -1,5 +1,7 @@
 package day02;
 
+import java.util.Arrays;
+
 import day01.ArrayGenerator;
 
 /**
@@ -27,15 +29,36 @@ public class InsertSort {
 		}
 		return data;
 	}
+	
+	/**
+	 * 插入排序优化
+	 * @param data T类型的数组
+	 * @return 排序后的数组
+	 */
+	public static<T extends Comparable<T>> T[] sort2(T[] data){
+		for(int i=0; i<data.length; i++){
+			int j;
+			T t = data[i];
+			for(j=i; j>0 && t.compareTo(data[j-1])<0; j--){
+				data[j] = data[j-1];
+			}
+			data[j] = t;
+		}
+		return data;
+	}
 	public static void main(String[] args) {
 		int[] dataSize = {10000,100000};
+//		for(int n : dataSize){
+//			Integer[] data = ArrayGenerator.generatorRandomArray(n,n);
+//			SortHelping.sortTest("InsertSort",data);
+//		}
 		for(int n : dataSize){
 			Integer[] data = ArrayGenerator.generatorRandomArray(n,n);
-			SortHelping.sortTest("InsertSort",data);
-		}
-		for(int n : dataSize){
-			Integer[] data = ArrayGenerator.generatorRandomArray(n,n);
+			Integer[] data2 = Arrays.copyOf(data, data.length);
+			Integer[] data3 = Arrays.copyOf(data, data.length); 
 			SortHelping.sortTest("SelectionSort",data);
+			SortHelping.sortTest("InsertSort",data2);
+			SortHelping.sortTest("InsertSort2",data3);
 		}
 //		Integer[] data = ArrayGenerator.generatorRandomArray(30, 30);
 //		SortHelping.print(sort(data));
