@@ -56,9 +56,21 @@ public class InsertSort {
 			Integer[] data = ArrayGenerator.generatorRandomArray(n,n);
 			Integer[] data2 = Arrays.copyOf(data, data.length);
 			Integer[] data3 = Arrays.copyOf(data, data.length); 
+			System.out.println("Random Arr:");
 			SortHelping.sortTest("SelectionSort",data);
 			SortHelping.sortTest("InsertSort",data2);
 			SortHelping.sortTest("InsertSort2",data3);
+			
+			System.out.println();
+			
+			System.out.println("Ordered Arr:");
+			data = ArrayGenerator.generatorOrderArray(n);
+			data2 = Arrays.copyOf(data, data.length);
+			data3 = Arrays.copyOf(data, data.length); 
+			SortHelping.sortTest("SelectionSort",data);
+			SortHelping.sortTest("InsertSort",data2);
+			SortHelping.sortTest("InsertSort2",data3);
+			System.out.println();
 		}
 //		Integer[] data = ArrayGenerator.generatorRandomArray(30, 30);
 //		SortHelping.print(sort(data));
