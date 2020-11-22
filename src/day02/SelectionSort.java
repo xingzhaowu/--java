@@ -3,7 +3,17 @@ package day02;
 import day01.ArrayGenerator;
 //import day01.Student;
 
+/**
+ * 选择排序
+ * @author Administrator
+ *
+ */
 public class SelectionSort {
+	/**
+	 * 选择排序，从小到大
+	 * @param data T类型数组
+	 * @return 排序后的数组
+	 */
 	public static <T extends Comparable<T>> T[] selectionSort(T[] data){
 		
 		for(int i=0; i<data.length; i++){
@@ -14,12 +24,17 @@ public class SelectionSort {
 					minIndex = j;
 				}
 			}
-			swap(data, i, minIndex);
+			SortHelping.swap(data, i, minIndex);
 					
 		}
 		return data;
 	}
 	
+	/**
+	 * 选择排序，从大到小排序
+	 * @param arr T类型的数组
+	 * @return 排序后的数组
+	 */
 	public static<T extends Comparable<T>> T[] selectionSort2(T[] arr){
 		for(int i=arr.length-1; i>=0; i--){
 			int maxIndex = i;
@@ -28,28 +43,13 @@ public class SelectionSort {
 					maxIndex = j;
 				}
 			}
-			swap(arr,i,maxIndex);
+			SortHelping.swap(arr,i,maxIndex);
 		}
 		return arr;
 	}
 	
-	/**
-	 * 
-	 * @param data
-	 * @param i
-	 * @param minIndex
-	 */
-	private static<T> void swap(T[] data, int i, int minIndex) {
-		T temp = data[i];
-		data[i] = data[minIndex];
-		data[minIndex] = temp;
-	}
-	public static<T> void print(T[] data){
-		for(T i : data){
-			System.out.print(i+" ");
-		}
-		System.out.println();
-	}
+	
+	
 	public static void main(String[] args) {
 		int[] dataSize = {10000,100000};
 		for(int n : dataSize){
@@ -57,7 +57,7 @@ public class SelectionSort {
 			SortHelping.sortTest("SelectionSort",data);
 		}
 		Integer[] data = ArrayGenerator.generatorRandomArray(30, 30);
-		print(selectionSort2(data));
+		SortHelping.print(selectionSort2(data));
 //		print(data);
 //		Student[] students = {
 //				new Student("1", 12, 88),

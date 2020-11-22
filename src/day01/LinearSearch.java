@@ -1,6 +1,7 @@
 package day01;
 
 /**
+ * 线性查找
  * 输入：数组和目标元素
  * 输出：目标元素所在的索引，若不存在返回-1
  * @author Administrator
@@ -22,6 +23,12 @@ public class LinearSearch<E> {
 		System.out.println(search(students,s3));
 		System.out.println(search(students,s4));
 	}
+	/**
+	 * 线性查找目标元素在数组中的位置
+	 * @param arr 数组
+	 * @param target 目标元素
+	 * @return 目标元素的位置，未找到返回-1
+	 */
 	public static <E> int search(E[] arr,E target){
 		for(int i=0; i<arr.length; i++){
 			if(arr[i].equals(target)){

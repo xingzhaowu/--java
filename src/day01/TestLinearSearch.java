@@ -1,5 +1,10 @@
 package day01;
 
+/**
+ * 测试线性查找运行时间
+ * @author Administrator
+ *
+ */
 public class TestLinearSearch {
 	public static void main(String[] args) {
 		Integer[] dataSize = {100000,100000000};
