@@ -1,4 +1,4 @@
-package day02;
+package algorithm.primary;
 
 public class SortedSort {
 	public static int[] sortedSort(int[] data){

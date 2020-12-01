@@ -1,8 +1,8 @@
-package day02;
+package algorithm.primary;
 
 import java.util.Arrays;
 
-import day01.ArrayGenerator;
+import algorithm.day01.ArrayGenerator;
 
 /**
  * ≤Â»Î≈≈–Ú

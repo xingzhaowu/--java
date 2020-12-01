@@ -1,4 +1,4 @@
-package day02;
+package algorithm.primary;
 
 /**
  * ÅÅĞò¸¨ÖúÀà
